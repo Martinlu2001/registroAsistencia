@@ -8,7 +8,7 @@
             <footer class="sticky-footer bg-footer">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; [empresa y año]</span>
+                        <span>Copyright &copy; [empresa] <?php echo date('Y')?></span>
                     </div>
                 </div>
             </footer>
@@ -39,12 +39,12 @@
                 <div class="modal-body">Selecciona "Salir" si quieres cerrar sesion.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                    <a class="btn btn-primary" href="../login.php">Salir</a>
+                    <a class="btn btn-primary" href="./logout.php">Salir</a>
                 </div>
             </div>
         </div>
     </div>
-
+</div>
     <!-- Bootstrap core JavaScript-->
     <script src="../assets/vendor/jquery/jquery.min.js"></script>
     
@@ -62,8 +62,10 @@
     <!-- Page level custom scripts -->
     <!-- <script src="../assets/js/demo/chart-area-demo.js"></script> -->
     <!-- <script src="../assets/js/demo/chart-pie-demo.js"></script> -->
+
     <!-- LLAMADA A AJAX-->
-     <script src="../assets/js/updateperfil.js"></script>
+    <script src="../assets/js/updateperfil.js"></script>
+    <!-- <script src="../assets/js/links-admin.js"></script> -->
     
 </body>
 

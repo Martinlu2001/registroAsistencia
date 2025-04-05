@@ -1,3 +1,16 @@
+<?php 
+    require_once $_SERVER['DOCUMENT_ROOT'] ."/admin/Controller/PerfilAdminController.php";
+    $userData = getPerfil($_SESSION["dniUser"]); 
+?>
+
+<?php
+    $_SESSION["nameUser"] = $userData['nameAdmin'];
+    $_SESSION["apelliUser"] = $userData['apelliAdmin'];
+    if (isset($_SESSION["rolUser"]) && $_SESSION["rolUser"] == "admin") {
+        $fullnameAdmin = $_SESSION["nameUser"] .' '. $_SESSION["apelliUser"];
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,6 +36,7 @@
 
 <body id="page-top">
 
+<div id="header-container">
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -32,7 +46,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
                 <div class="sidebar-brand-icon ">
-                    <img src="" alt="logo_informatica" width="50" height="50">
+                    <img src="" alt="logo" width="50" height="50">
                     <!-- <i class="fas fa-laugh-wink"></i> -->
                 </div>
                 <div class="sidebar-brand-text mx-3">[]</div>
@@ -43,7 +57,7 @@
 
             <!-- Pagina de inicio -->
             <li class="nav-item ">
-                <a class="nav-link abe" href="">
+                <a class="nav-link abe" href="./dashboard.php">
                     <i class="fas fa-home"></i>
                     <span>Inicio</span>
                 </a>
@@ -68,9 +82,9 @@
                 <div id="collapseEstado" class="collapse" aria-labelledby="headingPages"
                     data-parent="#accordionSidebar">
                     <div class="bg-footer py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">Personal de seguridad</a>
-                        <a class="collapse-item" href="#">Abogados</a>
-                        <a class="collapse-item" href="#">Usuarios</a>
+                        <a class="collapse-item"  href="administrar_personal_seguridad.php">Personal de seguridad</a>
+                        <a class="collapse-item"  href="administrar_abogados.php">Abogados</a>
+                        <a class="collapse-item userlink"  href="administrar_usuarios.php">Usuarios</a>
                     </div>
                 </div>
             </li>
@@ -98,16 +112,14 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-white-600 small" style="text-transform: uppercase;">Fabricio luna</span>
-                                <!-- <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg"> -->
+                                <span class="mr-2 d-none d-lg-inline text-white-600 small" style="text-transform: uppercase;"><?php echo $fullnameAdmin?></span>
                                 <i class="fas fa-caret-down"></i>
                             </a>
 
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="./perfil.php">
+                                <a class="dropdown-item perfillink" href="./perfil.php">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Perfil
                                 </a>

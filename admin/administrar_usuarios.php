@@ -13,7 +13,9 @@
 <?php 
     include './template/header.php';
 ?>
-    holas
+    <div id="holass">
+
+    </div>
 <?php 
     include './template/footer.php';
 ?>

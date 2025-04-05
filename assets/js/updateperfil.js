@@ -17,6 +17,14 @@ $(document).ready(function() {
                         icon: 'success',
                         title: 'Datos actualizados',
                         text: data.message, // Mostrar el mensaje de error que se pasa desde PHP
+                    }).then(() => {
+                        // Recargar el contenido del header después de la actualización
+                        //$('#header-container').load('./perfil.php');
+                        $('#header-container').load('./perfil.php', function() {
+                            // Reiniciar los eventos de Bootstrap después de cargar el nuevo contenido
+                            // Esto asegura que el dropdown funcione correctamente
+                            $('#userDropdown').dropdown();
+                        });
                     });
                 } else {
                     // Si hubo un error, mostrar el mensaje con SweetAlert
