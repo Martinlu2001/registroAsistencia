@@ -1349,7 +1349,7 @@ pre code {
     }
 }
 
-@media (min-width:992px) {
+@media (min-width:10000px) {
     .col-lg {
         flex-basis: 0;
         flex-grow: 1;
@@ -12145,7 +12145,7 @@ form.user .custom-checkbox.small label {
 
 form.user .form-control-user {
     font-size: .8rem;
-    border-radius: 10rem;
+    /* border-radius: 10rem; */
     padding: 1.5rem 1rem
 }
 

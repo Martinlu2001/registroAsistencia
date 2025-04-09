@@ -15,9 +15,9 @@
 ?>
 
 <!-- <div id="header-container"> -->
-    <?php
-        include 'template/header.php';
-    ?>
+<?php
+    include 'template/header.php';
+?>
 <!-- </div> -->
 
                     <!-- <div id="main-content"> -->

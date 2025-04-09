@@ -57,14 +57,18 @@
     <script src="../assets/js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <!-- <script src="../assets/vendor/chart.js/Chart.min.js"></script> -->
+    <script src="../assets/vendor/chart.js/Chart.min.js"></script>
+    <script src="../assets/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="../assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <!-- <script src="../assets/js/demo/chart-area-demo.js"></script> -->
-    <!-- <script src="../assets/js/demo/chart-pie-demo.js"></script> -->
+    <script src="../assets/js/demo/chart-area-demo.js"></script>
+    <script src="../assets/js/demo/chart-pie-demo.js"></script>
+    <script src="../assets/js/demo/datatables-demo.js"></script>
 
     <!-- LLAMADA A AJAX-->
     <script src="../assets/js/updateperfil.js"></script>
+    <script src="../assets/js/createVigilante.js"></script>
     <!-- <script src="../assets/js/links-admin.js"></script> -->
     
 </body>

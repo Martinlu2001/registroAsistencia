@@ -42,5 +42,4 @@
         global $perfilAdminModel;
         return $perfilAdminModel->getUser($id);
     }
-
 ?>

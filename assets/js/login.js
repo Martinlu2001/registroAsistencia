@@ -1,12 +1,10 @@
 $(document).ready(function() {
-    
     $('#loginForm').on('submit', function(e) {
-        e.preventDefault(); // Evitar que se envíe de forma tradicional
-
-        var formData = $(this).serialize(); // Obtener los datos del formulario
+        e.preventDefault(); 
+        var formData = $(this).serialize(); 
 
         $.ajax({
-            url: './Controller/LoginController.php', // El archivo PHP donde se procesa el login
+            url: './Controller/LoginController.php', 
             type: 'POST',
             data: formData,
             success: function(response) {
@@ -15,11 +13,9 @@ $(document).ready(function() {
                 
                 if (data.status === 'success') {
                     window.location.href = data.redirect; 
-                } else {
-                    
+                } else {                   
                     Swal.fire({
                         icon: 'error',
-                        title: 'Oops...',
                         text: data.message, 
                     });
                 }
@@ -27,7 +23,6 @@ $(document).ready(function() {
             error: function(xhr, status, error) {
                 Swal.fire({
                     icon: 'error',
-                    title: 'Error',
                     text: 'Hubo un problema al procesar la solicitud.',
                 });
             }

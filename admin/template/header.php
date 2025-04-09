@@ -75,7 +75,7 @@
             <!-- Administrar usuarios -->
             <li class="nav-item">
                 <a class="nav-link collapsed abe" href="#" data-toggle="collapse" data-target="#collapseEstado"
-                aria-expanded="true" aria-controls="collapseEstado">
+                aria-expanded="true" aria-controls="collapseEstado" id="userCollapse">
                     <i class="fas fa-user"></i>
                     <span >Administrar usuarios</span>
                 </a>
@@ -119,7 +119,7 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item perfillink" href="./perfil.php">
+                                <a class="dropdown-item" href="./perfil.php">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Perfil
                                 </a>
