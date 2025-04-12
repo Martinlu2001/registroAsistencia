@@ -24,7 +24,7 @@
         }
 
         if ($actualizado) {
-            echo json_encode(['status' => 'success', 'message' => 'Perfil actualizado correctamente']);
+            echo json_encode(['status' => 'success', 'message' => 'Perfil actualizado correctamente', 'nombre' => $name. ' '. $lastname]);
             //echo 'Perfil actualizado correctamente';
             //$_SESSION["mensaje"] = "Perfil actualizado correctamente.";
             

@@ -3,39 +3,46 @@ $(document).ready(function() {
     $('#addSecurity').on('submit', function(e) {
         e.preventDefault(); // Evitar que se envíe de forma tradicional
 
-        //var formData = $(this).serialize(); // Obtener los datos del formulario
         var formData = new FormData(this);
         $.ajax({
-            url: './Controller/PersonalSeguridadController.php', // El archivo PHP donde se procesa el login
+            url: './Controller/PersonalSeguridadController.php', 
             type: 'POST',
             data: formData,
             processData: false, // No procesar los datos
             contentType: false, // No establecer el contentType, porque es FormData
             success: function(response) {
-                var data = JSON.parse(response); // Parseamos la respuesta JSON
-                // Si la respuesta es positiva, redirigir
+                var data = JSON.parse(response); 
                 if (data.status=== 'success') {
                     Swal.fire({
                         icon: 'success',
                         text: data.message,
                     }).then(() => {
-                        // Actualizar solo el datatable, no recargar toda la página
-                        //$('#header-container').load('./administrar_personal_seguridad.php');
-                        //$('#dataDispSec').modal('hide');
-                        //$('#addSecurity')[0].reset();
-
-                        //$('#userDropdown').dropdown();
+                        /*if ( $.fn.DataTable.isDataTable('#dataTable') ) {
+                            $('#dataTable').DataTable().destroy();
+                        }*/
+                        //$('#header-container').load('./contenido-security.php');
+                        $('#header-container').load('./contenido-security.php', function(){
+                            $('#dataTable').DataTable();
+                        });
+                        /*$('#dataDispSec').modal('hide');
+                        $('#addSecurity')[0].reset();*/
+                        /*$('#header-container').load('./contenido-security.php', function(response, status, xhr) {
+                            
+                                $('#dataTable').DataTable({
+                                    responsive: true,
+                                    language: {
+                                        url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json'
+                                    }
+                                });
+            
+                    
+                            // Cerrar modal y resetear el form
+                           
+                        });*/
                         $('#dataDispSec').modal('hide');
                         $('#addSecurity')[0].reset();
-                        $('#header-container').load('./administrar_personal_seguridad.php', function() {
-                            // Reiniciar los eventos de Bootstrap después de cargar el nuevo contenido
-                            // Esto asegura que el dropdown funcione correctamente
-                            $('#userDropdown').dropdown();
-                            $('#userCollapse').collapse('toggle');
-                        });
                     });
                 } else {
-                    // Si hubo un error, mostrar el mensaje con SweetAlert
                     Swal.fire({
                         icon: 'error',
                         text: data.message, 

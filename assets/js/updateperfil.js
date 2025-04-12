@@ -13,19 +13,17 @@ $(document).ready(function() {
                 if (data.status=== 'success') {
                     Swal.fire({
                         icon: 'success',
-                        title: 'Datos actualizados',
                         text: data.message, 
                     }).then(() => {
-                        // Recargar el contenido del header después de la actualización
-                        //$('#header-container').load('./perfil.php');
-                        $('#header-container').load('./perfil.php', function() {
-                            // Reiniciar los eventos de Bootstrap después de cargar el nuevo contenido
-                            // Esto asegura que el dropdown funcione correctamente
+                        $('#head-container').load('./contenido-perfil.php');
+
+                        // Actualizar el nombre en la topbar
+                        $('.text-white-600').text(data.nombre.toUpperCase());
+                        /*$('#header-container').load('./perfil.php', function() {
                             $('#userDropdown').dropdown();
-                            //$('#userCollapse').collapse();
-                            $('#userCollapse').collapse('dispose');  // Eliminar el comportamiento anterior
-                            $('#userCollapse').collapse();  // Reactivar el colapso
-                        });
+                            $('#userCollapse').collapse('dispose');  
+                            $('#userCollapse').collapse();  
+                        });*/
                     });
                 } else {
                     Swal.fire({

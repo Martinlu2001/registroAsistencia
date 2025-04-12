@@ -1,5 +1,5 @@
                 </div>
-                <!-- /.container-fluid -->
+                <!-- End of Page Content-->
 
             </div>
             <!-- End of Main Content -->
@@ -44,7 +44,7 @@
             </div>
         </div>
     </div>
-</div>
+<!-- </div> -->
     <!-- Bootstrap core JavaScript-->
     <script src="../assets/vendor/jquery/jquery.min.js"></script>
     
