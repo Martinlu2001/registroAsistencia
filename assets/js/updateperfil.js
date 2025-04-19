@@ -1,5 +1,6 @@
 $(document).ready(function() { 
-    $('#perfilForm').on('submit', function(e) {
+    $(document).on('submit', '#perfilForm',function(e) {
+    //$('#perfilForm').on('submit', function(e) {
         e.preventDefault(); 
         var formData = $(this).serialize(); 
 

@@ -8,49 +8,33 @@
             $this->conexion = $mysqli;
         }
 
-        public function createVigilante($dni, $name, $lastname, $password, $phone, $rol, $gender, $image){
+        public function createVigilante($dni, $name, $lastname, $password, $phone, $rol, $gender){
             $sql = "
-                INSERT INTO vigilante (dniVigilante, nameVigilante, apelliVigilante, passwordVigilante, rolVigilante, celVigilante, sexVigilante, imageVigilante) 
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                INSERT INTO vigilante (dniVigilante, nameVigilante, apelliVigilante, passwordVigilante, rolVigilante, celVigilante, sexVigilante) 
+                VALUES (?, ?, ?, ?, ?, ?, ?)";
                 
             $stmt = $this->conexion->prepare($sql);
-            $stmt->bind_param("ssssssss", $dni, $name, $lastname, $password, $rol, $phone, $gender, $image);
-            /*$stmt->execute();
-            return $stmt->get_result()->fetch_assoc();*/
-            // Ejecutar la consulta
+            $stmt->bind_param("sssssss", $dni, $name, $lastname, $password, $rol, $phone, $gender);
+           
             if ($stmt->execute()) {
-                // Si la inserción fue exitosa, puedes retornar el ID del nuevo vigilante
-                //return $this->conexion->insert_id;  // Retorna el ID del nuevo vigilante insertado
                 return true;
             } else {
-                // Si hubo un error en la ejecución, devuelve un error o null
                 return null;
             }
         }
 
-        /*public function getVigilante(){
+        public function deleteVigilante($dni){
             $sql = "
-                SELECT dniVigilante, nameVigilante, apelliVigilante, rolVigilante, celVigilante, sexVigilante, imageVigilante 
-                FROM vigilante WHERE dniVigilante = ?";
-                
+                DELETE FROM vigilante WHERE dniVigilante = ?";
             $stmt = $this->conexion->prepare($sql);
-            $stmt->bind_param("s", $id);
-            $stmt->execute();
-            return $stmt->get_result()->fetch_assoc();
-        }*/
-
-        public function updateVigilante(){
-
-        }
-
-        public function deleteVigilante(){
-
+            $stmt->bind_param("s", $dni);
+            return $stmt->execute();
         }
 
         public function getDatatableVigilante(){
             $sql = "
-            SELECT * 
-            FROM vigilante";
+                SELECT * 
+                FROM vigilante";
             
             $stmt = $this->conexion->prepare($sql);
             $stmt->execute();

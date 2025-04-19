@@ -1,15 +1,17 @@
 $(document).ready(function() {
     
-    $('#addSecurity').on('submit', function(e) {
+    $(document).on('submit','#addSecurity', function(e) {
+    //$('#addSecurity').on('submit', function(e) {
         e.preventDefault(); // Evitar que se envíe de forma tradicional
 
-        var formData = new FormData(this);
+        //var formData = new FormData(this);
+        var formData = $(this).serialize(); 
         $.ajax({
             url: './Controller/PersonalSeguridadController.php', 
             type: 'POST',
             data: formData,
-            processData: false, // No procesar los datos
-            contentType: false, // No establecer el contentType, porque es FormData
+            //processData: false, // No procesar los datos
+            //contentType: false, // No establecer el contentType, porque es FormData
             success: function(response) {
                 var data = JSON.parse(response); 
                 if (data.status=== 'success') {
@@ -39,7 +41,7 @@ $(document).ready(function() {
                             // Cerrar modal y resetear el form
                            
                         });*/
-                        $('#dataDispSec').modal('hide');
+                        $('#createSecurity').modal('hide');
                         $('#addSecurity')[0].reset();
                     });
                 } else {
