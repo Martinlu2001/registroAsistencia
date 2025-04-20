@@ -2,10 +2,10 @@
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
-    require_once $_SERVER['DOCUMENT_ROOT'] .  "/admin/Model/PerfilAdminModel.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] .  "/Model/PerfilModel.php";
     require_once  $_SERVER['DOCUMENT_ROOT'] . "/config/conexion.php";
     
-    $perfilAdminModel = new PerfilAdminModel($mysqli);
+    $perfilModel = new PerfilModel($mysqli);
 
     if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["action"]) && $_POST["action"] === "actualizar") {
         $dni = $_POST['dni'];
@@ -16,10 +16,10 @@
         $gender = $_POST['gender'];
 
         if (empty($password)) {
-            $actualizado = $perfilAdminModel->updatePerfilSinPassword($dni, $name, $lastname, $phone, $gender);
+            $actualizado = $perfilModel->updatePerfilSinPassword($dni, $name, $lastname, $phone, $gender);
         } else {
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-            $actualizado = $perfilAdminModel->updatePerfilConPassword($dni, $name, $lastname, $hashedPassword, $phone, $gender);
+            $actualizado = $perfilModel->updatePerfilConPassword($dni, $name, $lastname, $hashedPassword, $phone, $gender);
         }
 
         if ($actualizado) {
@@ -31,7 +31,7 @@
     }
 
     function getPerfil($id) {
-        global $perfilAdminModel;
-        return $perfilAdminModel->getUser($id);
+        global $perfilModel;
+        return $perfilModel->getUser($id);
     }
 ?>

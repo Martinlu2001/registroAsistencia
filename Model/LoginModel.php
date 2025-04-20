@@ -9,7 +9,6 @@
         }
 
         public function getUsuario($user) {
-            #$sql = "SELECT dniVigilante, passwordVigilante, nameVigilante, apelliVigilante, celVigilante, sexVigilante FROM Vigilante WHERE dniVigilante=?";
             $sql = "
                 SELECT 'admin' AS rol, dniAdmin AS dniUser, passwordAdmin AS passwordUser, nameAdmin AS nameUser, apelliAdmin AS apelliUser , celAdmin AS celUser, sexAdmin AS sexUser 
                 FROM admin WHERE dniAdmin = ?

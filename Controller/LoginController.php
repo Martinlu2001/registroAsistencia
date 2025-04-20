@@ -18,22 +18,12 @@
             $_SESSION["celUser"] = $userData['celUser'];
             $_SESSION["sexUser"] = $userData['sexUser'];
 
-            // Ajax según rol
             if ($userData['rol'] === "admin") {
-                //header("Location: ../admin/dashboard.php");
                 echo json_encode(['status' => 'success', 'redirect' => '../admin/dashboard.php']);
-                //echo 'admin';
             } else {
-                //header("Location: ../dashboard.php");
-                //echo 'user';
                 echo json_encode(['status' => 'success', 'redirect' => '../dashboard.php']);
             }
-            //exit();
         } else {
-            /*$_SESSION["error"] = "Usuario o contraseña incorrectos.";
-            header("Location: ../login.php");
-            exit();*/
-            //echo 'Usuario o contraseña incorrectos';
             echo json_encode(['status' => 'error', 'message' => 'Usuario o contraseña incorrectos.']);
         }
     }

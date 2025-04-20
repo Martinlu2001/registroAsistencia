@@ -4,7 +4,7 @@ $(document).ready(function() {
         var formData = $(this).serialize(); 
 
         $.ajax({
-            url: './Controller/PerfilAdminController.php', 
+            url: './Controller/PerfilController.php', 
             type: 'POST',
             data: formData,
             success: function(response) {

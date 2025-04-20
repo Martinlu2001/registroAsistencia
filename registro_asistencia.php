@@ -1,7 +1,7 @@
 <?php
     session_start();
-    if (!isset($_SESSION["rolUser"]) || $_SESSION["rolUser"] !== "admin") {
-        header("Location: ../login.php");
+    if (!isset($_SESSION["rolUser"]) || $_SESSION["rolUser"] !== "vigilante") {
+        header("Location: ./login.php");
         exit();
     }
     ini_set('display_errors', 1);
@@ -25,7 +25,7 @@
 ?>
 
 <div id="header-container">
-    <?php require_once './contenido-security.php'?>
+    <?php require_once './contenido-asistencia.php'?>
 </div>
 
 <?php

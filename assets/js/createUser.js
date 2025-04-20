@@ -1,11 +1,11 @@
 $(document).ready(function() {
     
-    $(document).on('submit','#addSecurity', function(e) {
+    $(document).on('submit','#addUser', function(e) {
         e.preventDefault();
         //var formData = new FormData(this);
         var formData = $(this).serialize(); 
         $.ajax({
-            url: './Controller/PersonalSeguridadController.php', 
+            url: './Controller/RegistrarAsistenciaController.php', 
             type: 'POST',
             data: formData,
             //processData: false, // No procesar los datos
@@ -17,11 +17,11 @@ $(document).ready(function() {
                         icon: 'success',
                         text: data.message,
                     }).then(() => {
-                        $('#header-container').load('./contenido-security.php', function(){
+                        $('#header-container').load('./contenido-asistencia.php', function(){
                             $('#dataTable').DataTable();
                         });
-                        $('#createSecurity').modal('hide');
-                        $('#addSecurity')[0].reset();
+                        $('#createUser').modal('hide');
+                        $('#addUser')[0].reset();
                     });
                 } else {
                     Swal.fire({

@@ -1,9 +1,5 @@
 <?php
     session_start();
-    //si esta iniciado la sesion
-    /*if(!isset($_SESSION['idUsuario'])){
-            header("Location: login.php");
-        }*/
     if (!isset($_SESSION["rolUser"]) || $_SESSION["rolUser"] !== "admin") {
         header("Location: ../login.php");
         exit();
@@ -11,11 +7,6 @@
 ?>
 
 <?php
-    //include './template/header.php';
-?>
-
-<?php
-    //include 'template/header.php';
     require_once './template/header.php'
 ?>
 <?php
@@ -96,5 +87,4 @@
 
 <?php
     require_once './template/footer.php';
-    //include './template/footer.php';
 ?>
