@@ -40,5 +40,15 @@
             $stmt->execute();
             return $stmt->get_result();
         }
+
+        public function getLawyerData(){
+            $sql = "
+                SELECT * 
+                FROM abogado";
+            
+            $stmt = $this->conexion->prepare($sql);
+            $stmt->execute();
+            return $stmt->get_result();
+        }
     }
 ?>

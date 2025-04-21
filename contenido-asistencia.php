@@ -1,6 +1,7 @@
 <?php 
     require_once $_SERVER['DOCUMENT_ROOT'] ."/Controller/RegistrarAsistenciaController.php";
     $userDatatableData = readDatatable();
+    $lawyerData = readLawyerData();
 ?>
 
 <!-- Titulo pagina inicio -->
@@ -118,23 +119,26 @@
                             <div class="row gx-3 mb-3">
                                 <!-- Form Group (fecha asistencia)-->
                                 <div class="col-md-4">
-                                    <label class="small mb-1" for="inputRol">Fecha asistencia</label>
-                                    <input class="form-control" name="dateBirth" id="dateBirth"
+                                    <label class="small mb-1" for="inputDateAttendance">Fecha asistencia</label>
+                                    <input class="form-control" name="dateAttendance" id="dateAttendance"
                                         type="date" required>
                                 </div>
                                 <!-- Form Group (hora asistencia)-->
                                 <div class="col-md-4">
-                                    <label class="small mb-1" for="inputRol">Hora asistencia</label>
-                                    <input class="form-control" name="hourBirth" id="hourBirth"
+                                    <label class="small mb-1" for="inputhourAttendance">Hora asistencia</label>
+                                    <input class="form-control" name="hourAttendance" id="hourAttendance"
                                         type="time" required>
                                 </div>
                                 <!-- Form Group (abogado)-->
                                 <div class="col-md-4">
                                     <label class="small mb-1" for="inputSex">Abogado</label>
-                                    <select id="gender" class="form-control" name="gender" required>
+                                    <select id="gender" class="form-control" name="lawyer" required>
                                         <option selected hidden>Elija...</option>
-                                        <option value="M">M</option>
-                                        <option value="F">F</option>
+                                        <?php 
+                                            while ($datos = $lawyerData->fetch_object()) {
+                                                echo '<option value="'.$datos->dniAbogado.'">'.$datos->nameAbogado.' '.$datos->apelliAbogado.'</option>';
+                                            }
+                                        ?>
                                     </select>
                                 </div>
                             </div>

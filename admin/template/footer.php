@@ -70,6 +70,10 @@
     <script src="../assets/js/updateperfil.js"></script>
     <script src="../assets/js/createVigilante.js"></script>
     <script src="../assets/js/deleteVigilante.js"></script>
+    <script src="../assets/js/createLawyer.js"></script>
+    <script src="../assets/js/deleteLawyer.js"></script>
+    <!-- <script src="../assets/js/createCliente.js"></script>
+    <script src="../assets/js/deleteCliente.js"></script> -->
     <!-- <script src="../assets/js/links-admin.js"></script> -->
     
 </body>

@@ -35,6 +35,11 @@
         return $userAttendance->getDatatableUser();
     }
 
+    function readLawyerData(){
+        global $userAttendance;
+        return $userAttendance->getLawyerData();
+    }
+
     /*if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["action"]) && $_POST["action"] === "delete") {
         $dni = $_POST['dni'];
 
