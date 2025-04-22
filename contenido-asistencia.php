@@ -43,7 +43,8 @@
                     <!-- body ventana modal-->
                     <div class="modal-body">
                         <form id="addUser" method="post" action="./Controller/RegistrarAsistenciaController.php">
-                            <input type="hidden" name="action" value="create">                          
+                            <input type="hidden" name="action" value="create">
+                            <input type="hidden" name="current_user" id="current_user" value="<?php echo $_SESSION["dniUser"]?>">                          
                             <div class="row gx-3 mb-3">
                                 <!-- Form Group (DNI)-->
                                 <div class="col-md-6 ">
@@ -132,7 +133,7 @@
                                 <!-- Form Group (abogado)-->
                                 <div class="col-md-4">
                                     <label class="small mb-1" for="inputSex">Abogado</label>
-                                    <select id="gender" class="form-control" name="lawyer" required>
+                                    <select id="lawyer" class="form-control" name="lawyer" required>
                                         <option selected hidden>Elija...</option>
                                         <?php 
                                             while ($datos = $lawyerData->fetch_object()) {
@@ -185,7 +186,7 @@
                         while ($datos = $userDatatableData->fetch_object()) {
                             echo '
                             <tr>
-                                <td>' . $datos->fechaAsistenciaCliente . '</td>
+                                <td>' . $datos->dniCliente . '</td>
                                 <td>' . $datos->dniCliente . '</td>
                                 <td>' . $datos->nameCliente .  ' ' .$datos->apelliCliente.'</td>
                                 <td>' . $datos->sexCliente . '</td>

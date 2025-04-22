@@ -19,8 +19,12 @@
         $age = $_POST['age'];
         $rol = $_POST['rol'];
         $gender = $_POST['gender'];
+        $date_attendance = $_POST['dateAttendance'];
+        $hour_attendance =$_POST['hourAttendance'] ;
+        $lawyer = $_POST['lawyer'];
+        $current_user = $_POST['current_user'];
 
-        $createUser = $userAttendance->createUser($dni, $name, $lastname, $phone, $dateBirth, $age, $rol, $gender);
+        $createUser = $userAttendance->createUser($dni, $name, $lastname, $phone, $dateBirth, $age, $rol, $gender, $date_attendance, $hour_attendance, $lawyer, $current_user);
 
         if ($createUser) {
             echo json_encode(['status' => 'success', 'message' => 'Usuario registrado correctamente']);
