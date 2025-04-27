@@ -1,6 +1,7 @@
 <?php 
     require_once $_SERVER['DOCUMENT_ROOT'] ."/admin/Controller/PerfilAdminController.php";
-    $userData = getPerfil($_SESSION["dniUser"]);
+    $perfilAdminController = new PerfilAdminController($mysqli);
+    $userData = $perfilAdminController->getPerfil($_SESSION["dniUser"]);
 ?>
 
 <link rel="stylesheet" href="../assets/css/styleperfil.css">
@@ -23,7 +24,7 @@
                 <!-- <div class="card-header">Detalles del perfil</div> -->
                 <div class="card-body">
                     <form id="perfilForm" method="post" action="./Controller/PerfilAdminController.php">
-                        <input type="hidden" name="action" value="actualizar"> <!-- Acción para actualizar -->
+                        <input type="hidden" name="action" value="actualizar">
                         <!-- Form Row-->
                         <div class="row gx-3 mb-3">
                             <!-- Form Group (nombres)-->

@@ -1,6 +1,7 @@
 <?php 
     require_once $_SERVER['DOCUMENT_ROOT'] ."/admin/Controller/PerfilAdminController.php";
-    $userData = getPerfil($_SESSION["dniUser"]); 
+    $perfilAdminController = new PerfilAdminController($mysqli);
+    $userData = $perfilAdminController->getPerfil($_SESSION["dniUser"]);
 ?>
 
 <?php
