@@ -28,7 +28,7 @@
                     if ($userData['rol'] === "admin") {
                         echo json_encode(['status' => 'success', 'redirect' => '../admin/dashboard.php']);
                     } else {
-                        echo json_encode(['status' => 'success', 'redirect' => '../dashboard.php']);
+                        echo json_encode(['status' => 'success', 'redirect' => '../registro_asistencia.php']);
                     }
                 } else {
                     echo json_encode(['status' => 'error', 'message' => 'Usuario o contraseña incorrectos.']);

@@ -121,19 +121,10 @@
                         <th>Rol</th>
                         <th>Celular</th>
                         <th>Genero</th>
+                        <th>Estado</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>DNI</th>
-                        <th>Nombres</th>
-                        <th>Rol</th>
-                        <th>Celular</th>
-                        <th>Genero</th>
-                        <th>Acciones</th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     <?php 
                         while ($datos = $userDatatableData->fetch_object()) {
@@ -144,6 +135,7 @@
                                 <td>' . $datos->rolVigilante . '</td>
                                 <td>' . $datos->celVigilante . '</td>
                                 <td>' . $datos->sexVigilante . '</td>
+                                <td>' . $datos->estadoVigilante . '</td>
                                 <td> 
                                     <button value="ok" class="btn btn-success" type="button"
                                         data-toggle="modal" data-target="#dataSecurityView_'.$datos->dniVigilante .'"><i

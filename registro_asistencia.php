@@ -4,14 +4,6 @@
         header("Location: ./login.php");
         exit();
     }
-    ini_set('display_errors', 1);
-    error_reporting(E_ALL);
-?>
-
-<?php 
-    /*require_once $_SERVER['DOCUMENT_ROOT'] ."/admin/Controller/PersonalSeguridadController.php";
-    $userDatatableData = readDatatableVigilante();*/
-    //$userData = readVigilante();
 ?>
 
 <?php

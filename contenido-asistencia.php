@@ -1,7 +1,8 @@
 <?php 
     require_once $_SERVER['DOCUMENT_ROOT'] ."/Controller/RegistrarAsistenciaController.php";
-    $userDatatableData = readDatatable();
-    $lawyerData = readLawyerData();
+    $registrarAsistenciaController = new RegistrarAsistenciaController($mysqli);
+    $userDatatableData = $registrarAsistenciaController->readDataTable();
+    $lawyerData = $registrarAsistenciaController->readLawyerData();
     $lawyers = [];
     while ($lawyer = $lawyerData->fetch_object()) {
         $lawyers[] = $lawyer;
@@ -172,16 +173,6 @@
                         <th>Acciones</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>Fecha asistencia</th>
-                        <th>Hora asistencia</th>
-                        <th>DNI</th>
-                        <th>Nombres</th>
-                        <th>Genero</th>
-                        <th>Acciones</th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     <?php
                         $modales = '';
@@ -403,7 +394,8 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>';
-                                                    $userAttendanceData = readUserAttendanceData($datos->dniCliente, $datos->nameCliente, $datos->apelliCliente);
+                                                    $registroAsistencia = new RegistrarAsistenciaController($mysqli);
+                                                    $userAttendanceData = $registroAsistencia->readUserAttendanceData($datos->dniCliente, $datos->nameCliente, $datos->apelliCliente);
                                                     $list = [];
                                                     while ($attendance = $userAttendanceData->fetch_object()) {
                                                         $list[] = $attendance;

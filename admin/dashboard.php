@@ -15,6 +15,14 @@
 <?php
     require_once './template/topbar.php'
 ?>
+<?php 
+    require_once $_SERVER['DOCUMENT_ROOT'] ."/admin/Controller/DashboardController.php";
+    $dashboardController = new DashboardController($mysqli);
+    $lawyer = $dashboardController->getDataLawyer();
+    $security = $dashboardController->getDataSecurity();
+    $client = $dashboardController->getDataClient();
+?>
+
 
 <!-- Titulo pagina inicio -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -33,11 +41,12 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                            Personal de seguridad</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">20</div>
+                            Personal de seguridad
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo  htmlspecialchars($security); ?></div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-desktop fa-2x text-gray-300"></i>
+                        <i class="fas fa-user-shield fa-2x text-gray-300"></i>
                     </div>
                 </div>
             </div>
@@ -52,10 +61,10 @@
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                             Abogados</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">11</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo  htmlspecialchars($lawyer); ?></div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-desktop fa-2x text-gray-300"></i>
+                        <i class="fas fa-gavel fa-2x text-gray-300"></i>
                     </div>
                 </div>
             </div>
@@ -68,16 +77,16 @@
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Usuarios
+                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Clientes
                         </div>
                         <div class="row no-gutters align-items-center">
                             <div class="col-auto">
-                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">11</div>
+                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo  htmlspecialchars($client); ?></div>
                             </div>
                         </div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-desktop fa-2x text-gray-300"></i>
+                        <i class="fas fa-user fa-2x text-gray-300"></i>
                     </div>
                 </div>
             </div>

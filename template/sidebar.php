@@ -37,19 +37,11 @@
             <span>Registrar asistencia</span>
         </a>
     </li>
-    <!-- Administrar usuarios -->
-    <!-- <li class="nav-item">
-        <a class="nav-link collapsed abe" href="#" data-toggle="collapse" data-target="#collapseEstado"
-            aria-expanded="true" aria-controls="collapseEstado">
-            <i class="fas fa-user"></i>
-            <span>Registrar Asistencia</span>
+    <li class="nav-item ">
+        <a class="nav-link abe" href="./descarga_asistencia.php">
+            <i class="fas fa-download"></i>
+            <span>Descargar asistencia</span>
         </a>
-        <div id="collapseEstado" class="collapse" aria-labelledby="headingPages"
-            data-parent="#accordionSidebar">
-            <div class="bg-footer py-2 collapse-inner rounded">
-                <a class="collapse-item" href="registrar_asistencia.php">Personal de seguridad</a>
-            </div>
-        </div>
-    </li> -->
+    </li>
 </ul>
 <!-- End of Sidebar -->

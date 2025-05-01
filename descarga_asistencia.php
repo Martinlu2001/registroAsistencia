@@ -16,17 +16,8 @@
     require_once './template/topbar.php'
 ?>
 
-<!-- Titulo pagina inicio -->
-<div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Inicio</h1>
-</div>
-
-<hr class="mt-0 mb-4">
-
-<!-- Content Row -->
-<div class="row">
-
-
+<div id="header-container">
+    <?php require_once './contenido-descarga.php'?>
 </div>
 
 <?php
